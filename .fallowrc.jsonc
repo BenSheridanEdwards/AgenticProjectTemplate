@@ -1,0 +1,12 @@
+{
+  // size-limit auto-loads its plugins (the @size-limit/* packages) from
+  // package.json at runtime, so @size-limit/file is never `import`ed in source.
+  // It is genuinely used by the `size` script — tell Fallow so the dependency
+  // audit stays honest rather than flagging a false positive on every run.
+  "ignoreDependencies": ["@size-limit/file"],
+
+  // jest.style-stub.cjs is referenced as a string in jest.config.ts
+  // (moduleNameMapper), not imported, so it isn't statically reachable. It is
+  // used by every test run — exclude it from dead-file analysis.
+  "ignorePatterns": ["jest.style-stub.cjs"]
+}
