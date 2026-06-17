@@ -1,5 +1,9 @@
 # Agentic Project Template
 
+[![CI](https://github.com/BenSheridanEdwards/AgenticProjectTemplate/actions/workflows/ci.yml/badge.svg)](https://github.com/BenSheridanEdwards/AgenticProjectTemplate/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/BenSheridanEdwards/AgenticProjectTemplate/actions/workflows/codeql.yml/badge.svg)](https://github.com/BenSheridanEdwards/AgenticProjectTemplate/actions/workflows/codeql.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **A reference scaffold for agentic engineering.** It shows the files, gates, and
 context that make AI-written code consistent and enterprise-grade — the
 scaffolding we want in place when we start a new project, or when we land in a
