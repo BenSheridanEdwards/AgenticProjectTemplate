@@ -64,6 +64,8 @@ jobs:
       #     change is approved via the styleproof-approve workflow) ---
       - uses: BenSheridanEdwards/styleproof@v1
         with:
-          baseline-dir: base
-          fresh-dir: head
+          # The capture writes under its baseDir (__stylemaps__/<label>), so the
+          # action must be pointed at the full path, not the bare label.
+          baseline-dir: __stylemaps__/base
+          fresh-dir: __stylemaps__/head
           require-approval: true
