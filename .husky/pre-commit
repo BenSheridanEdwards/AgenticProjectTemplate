@@ -13,3 +13,6 @@ pnpm exec biome check --staged --no-errors-on-unmatched .
 
 echo "› fallow (code intelligence: dead code, cycles, complexity)"
 pnpm fallow:audit
+
+echo "› secret scan (gitleaks, staged content)"
+pnpm secret-scan

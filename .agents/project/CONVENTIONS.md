@@ -55,3 +55,10 @@ are checked in review. When in doubt, copy the reference feature.
   `type(scope): subject` — e.g. `feat(threshold-counter): add reset action`.
 - Subject in the imperative mood, lower case, no trailing period.
 - One logical change per commit; keep the diff reviewable.
+
+## Branches
+
+- Name branches `<type>/<short-kebab-summary>`, where `<type>` is a Conventional
+  Commit type — e.g. `feat/threshold-reset`, `fix/coverage-gate`,
+  `chore/bump-actions`. This keeps the branch's intent legible to humans and
+  agents alike, and mirrors the commit taxonomy.

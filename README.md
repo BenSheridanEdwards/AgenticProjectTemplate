@@ -35,10 +35,10 @@ Every standard is an executable gate, run at the earliest point it can fail:
 
 | Stage | Gate | Files |
 | --- | --- | --- |
-| **pre-commit** | type check · Biome (lint + format + imports) · Fallow code intelligence | [`.husky/pre-commit`](.husky/pre-commit) |
+| **pre-commit** | type check · Biome (lint + format + imports) · Fallow code intelligence · staged secret scan | [`.husky/pre-commit`](.husky/pre-commit) |
 | **commit-msg** | Conventional Commits | [`.husky/commit-msg`](.husky/commit-msg), [`commitlint.config.ts`](commitlint.config.ts) |
-| **pre-push** | unit/component tests (coverage) · build smoke · E2E behaviour map | [`.husky/pre-push`](.husky/pre-push) |
-| **CI** | all of the above + dependency & secret audit + **StyleProof** visual gate | [`.github/workflows/`](.github/workflows) |
+| **pre-push** | unit/component tests (coverage) · build smoke · E2E behaviour map (incl. axe a11y) | [`.husky/pre-push`](.husky/pre-push) |
+| **CI** | all of the above + dependency & secret audit · CodeQL SAST · bundle-size budget · Lighthouse · **StyleProof** visual gate | [`.github/workflows/`](.github/workflows) |
 
 Local hooks and CI run the *same* checks, so "works on my machine" and "passes
 CI" converge. The one local command is `pnpm verify`.
@@ -83,21 +83,30 @@ AGENTS.md / CLAUDE.md     Agent contract. Thin entry points → .agents/.
   hooks/block-gate-bypass.sh  Refuses --no-verify. Gates aren't optional.
   skills/                   This repo's own packaged processes.
 .husky/                     pre-commit · commit-msg · pre-push gates.
-.github/workflows/
-  ci.yml                    Quality · tests · build · e2e · security.
-  styleproof.yml            Computed-style visual gate (PR head vs base).
-  styleproof-approve.yml    Per-change visual sign-off (on default branch).
+.github/
+  dependabot.yml            Weekly npm + GitHub-Actions dependency updates.
+  workflows/
+    ci.yml                  Quality · tests · build+size · e2e · security.
+    codeql.yml              CodeQL SAST (security-events).
+    lighthouse.yml          Performance + a11y budget on PRs.
+    styleproof.yml          Computed-style visual gate (PR head vs base).
+    styleproof-approve.yml  Per-change visual sign-off (on default branch).
+SECURITY.md                 Vulnerability-disclosure policy.
 biome.json                  Lint + format + import order (one tool).
 commitlint.config.ts        Conventional Commits.
-jest.config.ts / jest.setup.ts  Unit + component tests (RTL), coverage gate.
+jest.config.ts / jest.setup.ts  Unit + component tests (RTL + jest-axe), coverage gate.
 playwright.config.ts        One browser harness for E2E + StyleProof.
+.size-limit.json            Bundle-size budget.
+lighthouserc.json           Lighthouse CI budget (a11y floor + perf).
 tsconfig.json               strict + extra strictness; the first gate.
 vite.config.ts              The runnable carrier.
 scripts/
   setup-agentic-toolkit.sh  Installs ArchitectPlaybook, Fallow skills, graphify.
+  secret-scan.sh            Staged secret scan (gitleaks, conditional).
   verify-gates.sh           Local mirror of the CI gate suite.
 e2e/
   app.spec.ts               The behaviour map.
+  accessibility.spec.ts     Real-browser axe scan (WCAG A/AA, incl. contrast).
   styleproof.spec.ts        StyleProof surfaces (computed-style capture).
 src/features/threshold-counter/  The one minimal-but-real feature.
 ```

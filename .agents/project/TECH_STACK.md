@@ -16,8 +16,14 @@ is an ADR-level decision.
 | Commit format | **commitlint** | Conventional Commits on `commit-msg`. |
 | Code intelligence | **Fallow** | Dead code, cycles, complexity, architecture drift. |
 | Visual regression | **StyleProof** | Diffs computed styles; review-gate + certify modes. |
+| Accessibility | **jest-axe + @axe-core/playwright** | axe at unit level and in the real browser (contrast). |
+| Bundle-size budget | **size-limit** | Fails CI when `dist/` exceeds the budget. |
+| Performance budget | **Lighthouse CI** | a11y floor + perf budget on pull requests. |
 | Git hooks | **husky** | Runs the gates locally before commit/push. |
-| Dependency security | **`pnpm audit` + gitleaks** | In CI; vulnerabilities and secret leaks. |
+| Dependency vulnerabilities | **`pnpm audit`** | High/critical advisories fail CI. |
+| Secret scanning | **gitleaks** | Staged content on pre-commit; full history in CI. |
+| Static application security | **CodeQL** | SAST on every push and pull request. |
+| Dependency updates | **Dependabot** | Weekly npm + GitHub-Actions update PRs. |
 | Repo health audits | **ArchitectPlaybook** | Claude Code skills; the health-check (showcase #1). |
 | Codebase knowledge graph | **graphify** | Powers ArchitectPlaybook's `/pre-audit-setup`. |
 

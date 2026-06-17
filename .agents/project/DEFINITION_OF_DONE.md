@@ -19,6 +19,10 @@ gates" are the same statement. An agent must not report a task complete until
 - [ ] **Code intelligence clean.** `pnpm fallow:audit` introduces no new dead
       code, circular dependencies, or complexity/architecture violations.
 - [ ] **Build succeeds.** `pnpm build` produces a clean production bundle.
+- [ ] **Accessible.** No axe violations (jest-axe in unit tests, `@axe-core/playwright`
+      in the E2E run); interactive elements are reachable and labelled.
+- [ ] **Within budget.** `pnpm size` passes (the bundle stays under the
+      `.size-limit.json` budget).
 - [ ] **Visuals accounted for.** Any CSS change is either an *intended* change
       approved in the StyleProof report, or a refactor certified as zero-diff.
 - [ ] **Patterns followed.** The change matches

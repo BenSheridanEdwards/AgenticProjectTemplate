@@ -22,7 +22,10 @@ pnpm test:coverage
 step "Production build (Vite)"
 pnpm build
 
-step "End-to-end behaviour map (Playwright)"
+step "Bundle-size budget (size-limit)"
+pnpm size
+
+step "End-to-end behaviour map + accessibility scan (Playwright + axe)"
 pnpm e2e
 
 printf '\n\033[32m✓ All local gates passed.\033[0m\n'
