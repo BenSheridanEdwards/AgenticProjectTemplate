@@ -14,7 +14,7 @@ export function ThresholdCounter() {
         Capacity
       </h2>
 
-      <p className="threshold-counter__count" data-testid="count">
+      <p className="threshold-counter__count">
         <span className="threshold-counter__count-value">{count}</span>
         <span className="threshold-counter__count-limit">/ {CRITICAL_THRESHOLD}</span>
       </p>

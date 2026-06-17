@@ -37,7 +37,7 @@ Every standard is an executable gate, run at the earliest point it can fail:
 | --- | --- | --- |
 | **pre-commit** | type check · Biome (lint + format + imports) · Fallow code intelligence | [`.husky/pre-commit`](.husky/pre-commit) |
 | **commit-msg** | Conventional Commits | [`.husky/commit-msg`](.husky/commit-msg), [`commitlint.config.ts`](commitlint.config.ts) |
-| **pre-push** | unit/component tests · E2E behaviour map | [`.husky/pre-push`](.husky/pre-push) |
+| **pre-push** | unit/component tests (coverage) · build smoke · E2E behaviour map | [`.husky/pre-push`](.husky/pre-push) |
 | **CI** | all of the above + dependency & secret audit + **StyleProof** visual gate | [`.github/workflows/`](.github/workflows) |
 
 Local hooks and CI run the *same* checks, so "works on my machine" and "passes

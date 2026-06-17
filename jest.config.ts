@@ -27,6 +27,9 @@ const config: Config = {
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/*.d.ts',
+    // Excluded by design: index.ts files are pure re-export barriers; main.tsx
+    // and App.tsx are the composition root, exercised by the E2E behaviour map
+    // (e2e/app.spec.ts) rather than the unit suite. Feature logic is NOT excluded.
     '!src/**/index.ts',
     '!src/main.tsx',
     '!src/App.tsx',

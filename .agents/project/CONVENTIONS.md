@@ -11,8 +11,9 @@ are checked in review. When in doubt, copy the reference feature.
 - **Functions & variables:** `camelCase`. **Types & interfaces:** `PascalCase`.
 - **Constants** that are true configuration: `SCREAMING_SNAKE_CASE`
   (`CRITICAL_THRESHOLD`).
-- **No abbreviations.** `count` not `cnt`, `request` not `req`. The name is the
-  cheapest documentation an agent has.
+- **No abbreviations in identifiers.** `count` not `cnt`, `request` not `req` —
+  the name is the cheapest documentation an agent has. (Established acronyms —
+  E2E, CI, ADR, UI, IO, URL — are fine in prose, comments, and headings.)
 
 ## TypeScript
 

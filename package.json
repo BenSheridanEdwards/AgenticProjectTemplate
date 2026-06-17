@@ -22,7 +22,7 @@
     "test:coverage": "jest --coverage",
     "e2e": "playwright test e2e/app.spec.ts",
     "e2e:install": "playwright install --with-deps chromium",
-    "verify": "pnpm typecheck && pnpm check && pnpm fallow:audit && pnpm test && pnpm build",
+    "verify": "pnpm typecheck && pnpm check && pnpm fallow:audit && pnpm test:coverage && pnpm build",
     "setup:agents": "bash scripts/setup-agentic-toolkit.sh",
     "prepare": "husky"
   },

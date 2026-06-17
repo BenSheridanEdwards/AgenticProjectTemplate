@@ -13,6 +13,7 @@
       "playwright-report",
       "test-results",
       "__stylemaps__",
+      ".architect-audits",
       "pnpm-lock.yaml"
     ]
   },

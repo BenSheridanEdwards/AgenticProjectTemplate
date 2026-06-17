@@ -18,7 +18,8 @@ earliest point it can fail:
 - **Pre-commit (fast, staged):** typecheck, Biome (lint + format + imports),
   Fallow code intelligence.
 - **Commit-msg:** commitlint (Conventional Commits).
-- **Pre-push (behaviour):** unit/component tests, end-to-end behaviour map.
+- **Pre-push (behaviour):** unit/component tests with coverage, a production
+  build smoke, and the end-to-end behaviour map.
 - **CI:** all of the above re-run on a clean checkout, plus dependency + secret
   security audit and the StyleProof visual gate.
 

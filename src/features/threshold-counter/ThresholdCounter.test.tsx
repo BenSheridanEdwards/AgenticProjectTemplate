@@ -4,14 +4,14 @@ import { ThresholdCounter } from './ThresholdCounter';
 
 /**
  * Tests assert on observable behaviour through the accessibility tree (roles,
- * names, the live status region) — never on implementation detail. This mirrors
- * the philosophy in `.claude/skills/write-unit-tests/SKILL.md`.
+ * names, the live status region) and visible text — never on implementation
+ * detail or test ids. This mirrors `.claude/skills/write-unit-tests/SKILL.md`.
  */
 describe('ThresholdCounter', () => {
   it('starts healthy at zero', () => {
     render(<ThresholdCounter />);
 
-    expect(screen.getByTestId('count')).toHaveTextContent('0');
+    expect(screen.getByText('0')).toBeInTheDocument();
     expect(screen.getByRole('status')).toHaveTextContent('Healthy');
   });
 
@@ -39,14 +39,14 @@ describe('ThresholdCounter', () => {
     const reset = screen.getByRole('button', { name: /reset/i });
 
     await user.click(decrease);
-    expect(screen.getByTestId('count')).toHaveTextContent('0');
+    expect(screen.getByText('0')).toBeInTheDocument();
 
     await user.click(increase);
     await user.click(increase);
-    expect(screen.getByTestId('count')).toHaveTextContent('2');
+    expect(screen.getByText('2')).toBeInTheDocument();
 
     await user.click(reset);
-    expect(screen.getByTestId('count')).toHaveTextContent('0');
+    expect(screen.getByText('0')).toBeInTheDocument();
     expect(screen.getByRole('status')).toHaveTextContent('Healthy');
   });
 });
