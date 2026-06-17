@@ -113,6 +113,7 @@ e2e/
   accessibility.spec.ts     Real-browser axe scan (WCAG A/AA, incl. contrast).
   styleproof.spec.ts        StyleProof surfaces (computed-style capture).
 src/features/threshold-counter/  The one minimal-but-real feature.
+graphify-out/GRAPH_REPORT.md  Knowledge-graph report (god nodes, communities) — rebuild with graphify.
 ```
 
 ---

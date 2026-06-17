@@ -17,6 +17,12 @@ __stylemaps__/
 # Lighthouse CI output
 .lighthouseci/
 
+# graphify knowledge graph (generated — rebuild with the graphify skill or
+# ArchitectPlaybook's /pre-audit-setup). Commit only the human-readable report
+# as a showcase artifact; the graph data, HTML, and cache are regenerable.
+graphify-out/*
+!graphify-out/GRAPH_REPORT.md
+
 # Local env + editor noise
 .env
 .env.*
