@@ -2,6 +2,7 @@
   "name": "agentic-project-template",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "A reference scaffold for agentic engineering: the files, gates, and context that make AI agents produce consistent, enterprise-quality code.",
   "type": "module",
   "packageManager": "pnpm@11.3.0",
@@ -25,6 +26,7 @@
     "size": "size-limit",
     "lhci": "lhci autorun",
     "secret-scan": "bash scripts/secret-scan.sh",
+    "license:check": "node scripts/license-check.mjs",
     "verify": "pnpm typecheck && pnpm check && pnpm fallow:audit && pnpm test:coverage && pnpm build && pnpm size",
     "setup:agents": "bash scripts/setup-agentic-toolkit.sh",
     "prepare": "husky"

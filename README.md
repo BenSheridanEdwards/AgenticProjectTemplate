@@ -42,7 +42,7 @@ Every standard is an executable gate, run at the earliest point it can fail:
 | **pre-commit** | type check · Biome (lint + format + imports) · Fallow code intelligence · staged secret scan | [`.husky/pre-commit`](.husky/pre-commit) |
 | **commit-msg** | Conventional Commits | [`.husky/commit-msg`](.husky/commit-msg), [`commitlint.config.ts`](commitlint.config.ts) |
 | **pre-push** | unit/component tests (coverage) · build smoke · E2E behaviour map (incl. axe a11y) | [`.husky/pre-push`](.husky/pre-push) |
-| **CI** | all of the above + dependency & secret audit · CodeQL SAST · bundle-size budget · Lighthouse · **StyleProof** visual gate | [`.github/workflows/`](.github/workflows) |
+| **CI** | all of the above + dependency, secret & license audit · CodeQL SAST · bundle-size budget · Lighthouse · **StyleProof** visual gate | [`.github/workflows/`](.github/workflows) |
 
 Local hooks and CI run the *same* checks, so "works on my machine" and "passes
 CI" converge. The one local command is `pnpm verify`.
@@ -110,6 +110,7 @@ scripts/
   setup-agentic-toolkit.sh  Installs ArchitectPlaybook, Fallow skills, graphify.
   fallow-audit.sh           Base-aware Fallow audit (introduced-issue gate).
   secret-scan.sh            Staged secret scan (gitleaks, conditional).
+  license-check.mjs         License-compliance gate (pnpm licenses + allow-list).
   verify-gates.sh           Local mirror of the CI gate suite.
 e2e/
   app.spec.ts               The behaviour map.
