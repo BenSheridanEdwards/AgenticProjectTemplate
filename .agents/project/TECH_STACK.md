@@ -23,6 +23,7 @@ is an ADR-level decision.
 | Dependency vulnerabilities | **`pnpm audit`** | High/critical advisories fail CI. |
 | Secret scanning | **gitleaks** | Staged content on pre-commit; full history in CI. |
 | Static application security | **CodeQL** | SAST on every push and pull request. |
+| License compliance | **pnpm licenses + allow-list** | CI fails on a dependency license outside the permissive allow-list. |
 | Dependency updates | **Dependabot** | Weekly npm + GitHub-Actions update PRs. |
 | Repo health audits | **ArchitectPlaybook** | Claude Code skills; the health-check (showcase #1). |
 | Codebase knowledge graph | **graphify** | Powers ArchitectPlaybook's `/pre-audit-setup`. |

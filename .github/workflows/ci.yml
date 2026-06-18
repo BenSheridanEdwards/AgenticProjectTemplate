@@ -117,6 +117,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Dependency vulnerability audit
         run: pnpm audit --audit-level=high
+      - name: License compliance
+        run: pnpm license:check
       - name: Secret scan (gitleaks)
         uses: gitleaks/gitleaks-action@v3
         env:
