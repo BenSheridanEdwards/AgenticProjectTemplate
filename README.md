@@ -229,6 +229,7 @@ AGENTS.md / CLAUDE.md     Agent contract. Thin entry points into .agents/.
   settings.json             Permission allowlist and PreToolUse hook.
   hooks/block-gate-bypass.sh  Refuses --no-verify. Gates are not optional.
   skills/                   This repo's own packaged processes.
+    install-agentic-infrastructure/  Install repo guidance, hooks, CI, and PR proof.
     build-quality-gates/    Build pre-commit, pre-push, and CI gates.
     build-agent-guidance/   Build truthful AGENTS.md, CLAUDE.md, and .agents context.
     pr-quality-contract/    PR proof, CI status, risk, and handoff workflow.

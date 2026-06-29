@@ -19,6 +19,8 @@ the Claude-Code-specific layer on top.
 
 This repo commits its own skills under `.claude/skills/`:
 
+- **`install-agentic-infrastructure`** — install or upgrade the repo guidance,
+  local hooks, CI workflows, and PR proof contract in another repository.
 - **`build-quality-gates`** — create or audit pre-commit, pre-push, and CI gates.
 - **`build-agent-guidance`** — create or update `AGENTS.md`, `CLAUDE.md`,
   `.agents/`, and agent-facing repo standards from current evidence.
