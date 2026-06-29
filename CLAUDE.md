@@ -19,6 +19,8 @@ the Claude-Code-specific layer on top.
 
 This repo commits its own skills under `.claude/skills/`:
 
+- **`install-agentic-infrastructure`** — install or upgrade the repo guidance,
+  local hooks, CI workflows, and PR proof contract in another repository.
 - **`run-e2e-tests`** — map a behaviour to a Playwright test and run it.
 - **`write-unit-tests`** — Jest + React Testing Library, behaviour-first.
 
