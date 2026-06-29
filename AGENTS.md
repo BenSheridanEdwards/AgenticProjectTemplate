@@ -62,3 +62,16 @@ pnpm e2e              # the end-to-end behaviour map
 - Do not add a second linter, formatter, or test runner (see `TECH_STACK.md`).
 - Treat generated artefacts (`dist/`, `coverage/`, `__stylemaps__/`) as
   disposable; never edit them by hand.
+
+## PR Proof Law
+
+Before opening, updating, or marking a PR ready, read
+`.agents/project/DEFINITION_OF_DONE.md` and
+`.agents/skills/pr-inline-screenshot-proof/SKILL.md`.
+
+- Screenshot proof must be committed to the branch and embedded inline in the PR
+  body with `![alt](...png?raw=1)`.
+- Bare screenshot links, local paths, relative paths, and placeholders are not
+  proof.
+- If no rendered or behavioural proof applies, write `Not applicable` with the
+  technical reason in the PR proof section.

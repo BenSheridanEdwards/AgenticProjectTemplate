@@ -59,3 +59,16 @@ fails, fix the cause.
 6. Commit with a Conventional Commit message.
 7. Use `pr-quality-contract` before opening or marking the PR ready.
 8. For a health-check of the whole repo, run the ArchitectPlaybook audits.
+
+## PR Proof Law
+
+Before opening, updating, or marking a PR ready, read
+`.agents/project/DEFINITION_OF_DONE.md` and
+`.agents/skills/pr-inline-screenshot-proof/SKILL.md`.
+
+- Screenshot proof must be committed to the branch and embedded inline in the PR
+  body with `![alt](...png?raw=1)`.
+- Bare screenshot links, local paths, relative paths, and placeholders are not
+  proof.
+- If no rendered or behavioural proof applies, write `Not applicable` with the
+  technical reason in the PR proof section.

@@ -32,3 +32,6 @@
 - [ ] The diff follows `.agents/project/ARCHITECTURE.md` and `CONVENTIONS.md`.
 - [ ] Any new architectural decision is recorded as an ADR.
 - [ ] No gates were bypassed or weakened.
+- [ ] Followed `.agents/project/DEFINITION_OF_DONE.md` and `.agents/skills/pr-inline-screenshot-proof/SKILL.md`.
+- [ ] Screenshots are committed and embedded inline with `![alt](...png?raw=1)`, or the proof section says `Not applicable` with the technical reason.
+- [ ] The PR body has no bare screenshot links, local paths, relative paths, or proof placeholders.
