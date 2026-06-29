@@ -34,7 +34,9 @@ Install the external skill libraries once with `pnpm setup:agents`:
 
 `.claude/settings.json` defines a permission allowlist for the project's safe
 commands and a **PreToolUse hook** (`.claude/hooks/block-gate-bypass.sh`) that
-refuses any command using `--no-verify`. The gates are not optional — if one
+refuses any git command using `--no-verify`. The hook is deliberately scoped:
+Claude Code only spawns it for Bash commands with a `git` subcommand, and the
+script blocks only the gate-bypass flag. The gates are not optional — if one
 fails, fix the cause.
 
 ## The workflow for a change
