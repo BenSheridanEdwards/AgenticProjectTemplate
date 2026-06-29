@@ -19,6 +19,7 @@ the Claude-Code-specific layer on top.
 
 This repo commits its own skills under `.claude/skills/`:
 
+- **`build-quality-gates`** — create or audit pre-commit, pre-push, and CI gates.
 - **`run-e2e-tests`** — map a behaviour to a Playwright test and run it.
 - **`write-unit-tests`** — Jest + React Testing Library, behaviour-first.
 
@@ -39,9 +40,11 @@ fails, fix the cause.
 
 ## The workflow for a change
 
-1. Read `.agents/project/ARCHITECTURE.md` + `CONVENTIONS.md`.
-2. Use the `run-e2e-tests` / `write-unit-tests` skills; copy from
+1. Read `.agents/project/QUALITY_GATES.md` before changing hooks, scripts, CI,
+   or tool ownership.
+2. Read `.agents/project/ARCHITECTURE.md` + `CONVENTIONS.md`.
+3. Use the `run-e2e-tests` / `write-unit-tests` skills; copy from
    `.agents/templates/`.
-3. Run `pnpm verify` and `pnpm e2e` until green.
-4. Commit with a Conventional Commit message.
-5. For a health-check of the whole repo, run the ArchitectPlaybook audits.
+4. Run `pnpm verify` and `pnpm e2e` until green.
+5. Commit with a Conventional Commit message.
+6. For a health-check of the whole repo, run the ArchitectPlaybook audits.
