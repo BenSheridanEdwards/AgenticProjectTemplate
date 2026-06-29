@@ -49,6 +49,7 @@ pnpm e2e              # the end-to-end behaviour map
 | The pattern to follow | `.agents/project/ARCHITECTURE.md` |
 | Naming, imports, errors | `.agents/project/CONVENTIONS.md` |
 | When am I done? | `.agents/project/DEFINITION_OF_DONE.md` |
+| Which gates run where | `.agents/project/QUALITY_GATES.md` |
 | What proof does a PR need? | `.agents/project/PR_QUALITY.md` |
 | Which tool owns what | `.agents/project/TECH_STACK.md` |
 | Domain language | `.agents/project/GLOSSARY.md` |

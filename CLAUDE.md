@@ -19,6 +19,7 @@ the Claude-Code-specific layer on top.
 
 This repo commits its own skills under `.claude/skills/`:
 
+- **`build-quality-gates`** — create or audit pre-commit, pre-push, and CI gates.
 - **`build-agent-guidance`** — create or update `AGENTS.md`, `CLAUDE.md`,
   `.agents/`, and agent-facing repo standards from current evidence.
 - **`run-e2e-tests`** — map a behaviour to a Playwright test and run it.
@@ -45,12 +46,14 @@ fails, fix the cause.
 
 ## The workflow for a change
 
-1. Read `.agents/project/AGENTIC_INFRASTRUCTURE.md` before changing guidance,
+1. Read `.agents/project/QUALITY_GATES.md` before changing hooks, scripts, CI,
+   or tool ownership.
+2. Read `.agents/project/AGENTIC_INFRASTRUCTURE.md` before changing guidance,
    hooks, workflows, or skills.
-2. Read `.agents/project/ARCHITECTURE.md` + `CONVENTIONS.md`.
-3. Use the `run-e2e-tests` / `write-unit-tests` skills; copy from
+3. Read `.agents/project/ARCHITECTURE.md` + `CONVENTIONS.md`.
+4. Use the `run-e2e-tests` / `write-unit-tests` skills; copy from
    `.agents/templates/`.
-4. Run `pnpm verify` and `pnpm e2e` until green.
-5. Commit with a Conventional Commit message.
-6. Use `pr-quality-contract` before opening or marking the PR ready.
-7. For a health-check of the whole repo, run the ArchitectPlaybook audits.
+5. Run `pnpm verify` and `pnpm e2e` until green.
+6. Commit with a Conventional Commit message.
+7. Use `pr-quality-contract` before opening or marking the PR ready.
+8. For a health-check of the whole repo, run the ArchitectPlaybook audits.

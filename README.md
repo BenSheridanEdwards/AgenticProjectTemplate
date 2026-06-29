@@ -44,6 +44,7 @@ to do:
   [architecture pattern](.agents/project/ARCHITECTURE.md) agents must follow, the
   [conventions](.agents/project/CONVENTIONS.md) for naming, imports, errors, and
   state, the [Definition of Done](.agents/project/DEFINITION_OF_DONE.md), the
+  [quality-gate matrix](.agents/project/QUALITY_GATES.md), the
   [PR quality contract](.agents/project/PR_QUALITY.md), the
   [tech stack](.agents/project/TECH_STACK.md) and what not to add to it, the
   [glossary](.agents/project/GLOSSARY.md), the [decision records](.agents/decisions)
@@ -218,6 +219,7 @@ AGENTS.md / CLAUDE.md     Agent contract. Thin entry points into .agents/.
   project/ARCHITECTURE.md   The pattern agents must follow.
   project/CONVENTIONS.md    Naming, imports, errors, state.
   project/DEFINITION_OF_DONE.md  "Done" means these gates are green.
+  project/QUALITY_GATES.md  Which gate runs where, and which tool owns it.
   project/PR_QUALITY.md     Proof required before a PR is ready.
   project/TECH_STACK.md     One tool per concern, and what not to add.
   project/GLOSSARY.md       Shared language (pairs with graphify).
@@ -227,6 +229,7 @@ AGENTS.md / CLAUDE.md     Agent contract. Thin entry points into .agents/.
   settings.json             Permission allowlist and PreToolUse hook.
   hooks/block-gate-bypass.sh  Refuses --no-verify. Gates are not optional.
   skills/                   This repo's own packaged processes.
+    build-quality-gates/    Build pre-commit, pre-push, and CI gates.
     build-agent-guidance/   Build truthful AGENTS.md, CLAUDE.md, and .agents context.
     pr-quality-contract/    PR proof, CI status, risk, and handoff workflow.
 .husky/                     pre-commit, commit-msg, pre-push gates.
