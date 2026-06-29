@@ -23,6 +23,8 @@ This repo commits its own skills under `.claude/skills/`:
   `.agents/`, and agent-facing repo standards from current evidence.
 - **`run-e2e-tests`** — map a behaviour to a Playwright test and run it.
 - **`write-unit-tests`** — Jest + React Testing Library, behaviour-first.
+- **`pr-quality-contract`** — prepare proof-backed PRs with local checks,
+  visual evidence, latest-sha CI status, risk, and explicit gaps.
 
 Install the external skill libraries once with `pnpm setup:agents`:
 
@@ -48,4 +50,5 @@ fails, fix the cause.
    `.agents/templates/`.
 4. Run `pnpm verify` and `pnpm e2e` until green.
 5. Commit with a Conventional Commit message.
-6. For a health-check of the whole repo, run the ArchitectPlaybook audits.
+6. Use `pr-quality-contract` before opening or marking the PR ready.
+7. For a health-check of the whole repo, run the ArchitectPlaybook audits.

@@ -17,6 +17,7 @@ changes — no drift between three half-maintained instruction files.
 | [`project/ARCHITECTURE.md`](project/ARCHITECTURE.md) | …before adding or moving any module. It is the pattern you must follow. |
 | [`project/CONVENTIONS.md`](project/CONVENTIONS.md) | …while writing code — naming, structure, imports, errors, state. |
 | [`project/DEFINITION_OF_DONE.md`](project/DEFINITION_OF_DONE.md) | …before you claim a task is finished. The gates enforce this list. |
+| [`project/PR_QUALITY.md`](project/PR_QUALITY.md) | …before opening, updating, or marking a pull request ready. |
 | [`project/TECH_STACK.md`](project/TECH_STACK.md) | …to know which tool owns which concern (and what *not* to add). |
 | [`project/GLOSSARY.md`](project/GLOSSARY.md) | …when you meet a domain term. Use these words exactly, in code and prose. |
 | [`decisions/`](decisions/) | …to understand *why* a constraint exists before you challenge it. ADRs. |
